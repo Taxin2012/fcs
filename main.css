@@ -6,5 +6,6 @@ p {
   font-size:24px; 
 }
 img {
-  text-align:center;
+  float:none;
+  margin:auto;
 }
