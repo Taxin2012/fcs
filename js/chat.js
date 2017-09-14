@@ -39,11 +39,11 @@ function htmljs_Chat_Init( holder )
     // РЎРѕР·РґР°РЅРёРµ С„РѕСЂРјС‹ РґР»СЏ С‡Р°С‚Р°. Р’С‘СЂСЃС‚РєР°.
     var html =  "<div class=\"holder-html-chat\" >"
 	          + "<div id=\"WebChatFormForm\" class=\"html-chat-history\" ></div>"
-		  + "<input type=\"text\" id=\"WebChatNameID\" class=\"html-chat-js-name\"  placeholder=\"РЈРєР°Р¶РёС‚Рµ РІР°С€Рµ РёРјСЏ...\" >"
-	          + "<textarea id = \"WebChatTextID\" placeholder = \"РћС‚РїСЂР°РІСЊС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ РІ online С‡Р°С‚...\" class=\"html-chat-js-input\" ></textarea>"
+		  + "<input type=\"text\" id=\"WebChatNameID\" class=\"html-chat-js-name\"  placeholder=\"Ник\" >"
+	          + "<textarea id = \"WebChatTextID\" placeholder = \"Текст\" class=\"html-chat-js-input\" ></textarea>"
 
                   + "<div class=\"html-chat-js-button-holder\">"
-                  +    "<input type=\"button\"  onclick=\"web_send_msg();\" value=\"РћС‚РїСЂР°РІРёС‚СЊ\" >"
+                  +    "<input type=\"button\"  onclick=\"web_send_msg();\" value=\"Отправить\" >"
                   + "</div>"
              +  "</div>";
     $(holder).html(html);
