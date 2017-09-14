@@ -32,5 +32,7 @@
 
        // Запуск чата. Передаём ему элемент в котором надо создать окно чата.
        htmljs_Chat_Init( $("#html-chat") )
+       
+       CometServer().get_pipe_log("web_chat_pipe");
     });
 </script>
