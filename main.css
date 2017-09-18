@@ -7,6 +7,9 @@ p {
   font-size:24px; 
   text-align:center;
 }
-div img {
+img {
+  text-align:center;
+}
+div {
   text-align:center;
 }
