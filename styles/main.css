@@ -33,6 +33,10 @@
     margin-bottom: 30px;
     display: inherit;
 }
+.headerv div {
+    margin: 0;
+    padding: 0;
+}
 .bodyi {
     border: 1px solid #CECEBC;
     width: 85%;
