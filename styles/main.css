@@ -237,10 +237,138 @@
     -moz-box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
     box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
 }
+
+.sidenav {
+    display: none;
+}
+.mmenu {
+    display: none;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 99999; /* Stay on top */
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: #669acc; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 20px 0;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.hrefs {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #818181;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    font-size: 70px;
+    margin-left: 0px;
+    margin-right: -7px;
+    margin-top: -25px;
+}
+
+.sidenav img {
+    margin-top: -11.4px;
+    margin-left: 87px;
+}
+
+.line {
+    background-color: #fff;
+    width: 100%;
+    height: 3px;
+    margin-top: 0px;
+}
+
+.line__two {
+    background-color: #fff;
+    width: 100%;
+    height: 3px;
+    margin-top: 0;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
 /*-----------Mobile-------------*/
 @media screen and (max-width: 1387px) {
     .headtext {
         display: none;
+    }
+}
+@media screen and (max-width: 950px) {
+    .header {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+    .menu {
+        display: none;
+    }
+    .mmenu {
+        width: 100%;
+        background-color: #669acc;
+        height: 50px;
+        display: block;
+        position: fixed;
+        z-index: 99997;
+        margin-top: -10%;
+        margin-left: -10px;
+    }
+    .mmenu .buttonm {
+        color: #FFFFFF;
+        margin: -37px 0 0 15px;
+        font-size: 40px;
+    }
+    .mmenu .sidetext {
+        display: table;
+        margin: auto;
+        color: #FFFFFF;
+        text-align: center;
+        margin-top: 14px;
+    }
+    .mmenu .sidetext div:first-child {
+        font-size: 16px;
+        margin-bottom: 1px;
+    }
+    .mmenu .sidetext div:last-child {
+        font-size: 11px;
+        border-bottom: 0.5px solid #fff;
+    }
+    .bodyi {
+        margin-top: 10%;
     }
 }
 /*-----------Mobile-------------*/
