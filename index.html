@@ -8,6 +8,38 @@
     <link rel="stylesheet" href="styles/main.css" type="text/css">
 </head>
 <body>
+
+<div class="mmenu">
+<div class="sidetext">
+    <div>Fun Chat Sounds</div>
+    <div></div>
+</div>
+    <div class="buttonm" onclick="openNav()">☰</div>
+</div>
+        </div>
+<script>
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <img src="imgs/logo.png" alt="" width="80" height="40">
+    <div class="line"></div>
+    <div class="hrefs">
+    <a href="/">Главная</a>
+    <a href="/versions">Версии</a>
+    <a href="aboutme.html">Аддон</a>
+    </div>
+    <div class="line__two"></div>
+</div>
+
 <!--<div class="animated fadeInUp" style="animation-delay: 0.1s;">-->
 <div class="header animated fadeInUp" style="animation-delay: 0.005s;">
     <div class="logo"><a href="index.html"><img src="imgs/logo.png" alt="" width="160" height="80"></a></div>
