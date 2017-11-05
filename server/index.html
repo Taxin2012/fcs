@@ -2,42 +2,64 @@
 @font-face {font-family: 'Roboto'; src: url('Roboto-Light.ttf') format('truetype'); }
 .first { margin: auto; float: none; width: 500px; min-height: 50px; margin-top: 200px; background-color: rgba(0,0,0,0.6); padding-top: 35px; padding-bottom: 35px; font-family: Roboto; text-align: center; }
 .vid-info { width: 110%; height: 100%; background: rgba(0,0,0,0.4); color: #fff; padding: 1rem; font-family: Roboto; margin: auto; float: none; margin-left: -50px; text-align: center; }
-body {
-  margin: 0;
-  padding: 0;
-/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
-  background: #333;
-  background-attachment: fixed;
-  background-size: cover;
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
 }
 
-/* The only rule that matters */
-#video-background {
-/*  making the video fullscreen  */
-  position: fixed;
-  right: 0; 
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-  width: auto; 
-  height: auto;
-  z-index: -100;
+.bg-video #player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+}
+
+.bg-video .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
 }
 </style>
 
 <script>
-document.onmousewheel=document.onwheel=function(){ 
-	return false;
-};
-document.addEventListener("MozMousePixelScroll",function(){return false},false);
-document.onkeydown=function(e) {
-	if (e.keyCode>=33&&e.keyCode<=40) return false;
+// Loads the YouTube IFrame API JavaScript code.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+// Inserts YouTube JS code into the page.
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+// onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    videoId: 'dM0d9uUgVSc', // the ID of the video (mentioned above)
+    playerVars: {
+      autoplay: 1, // start automatically
+      controls: 0, // don't show the controls (we can't click them anyways)
+      modestbranding: 1, // show smaller logo
+      loop: 1, // loop when complete
+      playlist: 'dM0d9uUgVSc' // required for looping, matches the video ID
+    }
+  });
 }
 </script>
 
-<video autoplay loop id="video-background" muted plays-inline>
-  <source src="https://americarp.000webhostapp.com/server/siarainbow.mp4" type="video/mp4">
-</video>
+<div class="bg-video">
+  <div class="overlay"></div>
+  <div id="player"></div>
+</div>
 
 <div class="vid-info">
 <div class="first">
