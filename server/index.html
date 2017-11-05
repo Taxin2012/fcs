@@ -2,63 +2,34 @@
 @font-face {font-family: 'Roboto'; src: url('Roboto-Light.ttf') format('truetype'); }
 .first { margin: auto; float: none; width: 500px; min-height: 50px; margin-top: 200px; background-color: rgba(0,0,0,0.6); padding-top: 35px; padding-bottom: 35px; font-family: Roboto; text-align: center; }
 .vid-info { width: 110%; height: 100%; background: rgba(0,0,0,0.4); color: #fff; padding: 1rem; font-family: Roboto; margin: auto; float: none; margin-left: -50px; text-align: center; }
-.bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
+.video-background {
+ background: #000;
+ position: fixed;
+ top: 0; right: 0; bottom: 0; left: 0;
+ z-index: -99;
 }
-
-.bg-video #player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -2;
+.video-foreground,
+.video-background iframe {
+ position: absolute;
+ top: 0; left: 0;
+ width: 100%; height: 100%;
+ pointer-events: none;
 }
-
-.bg-video .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
+#vidtop-content {
+ top: 0;
 }
 </style>
 
 <script>
-// Loads the YouTube IFrame API JavaScript code.
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-// Inserts YouTube JS code into the page.
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var player;
-
-// onYouTubeIframeAPIReady() is called when the IFrame API is ready to go.
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    videoId: 'dM0d9uUgVSc', // the ID of the video (mentioned above)
-    playerVars: {
-      autoplay: 1, // start automatically
-      controls: 0, // don't show the controls (we can't click them anyways)
-      modestbranding: 1, // show smaller logo
-      loop: 1, // loop when complete
-      playlist: 'dM0d9uUgVSc' // required for looping, matches the video ID
-    }
-  });
-}
 </script>
 
-<div class="bg-video">
-  <div class="overlay"></div>
-  <div id="player"></div>
+<div class="video-background">
+ <div class="video-foreground">
+ <iframe src="https://www.youtube.com/embed/dM0d9uUgVSc?
+controls=0&showinfo=0&rel=0&autoplay=1&loop=1
+&playlist=dM0d9uUgVSc" allowfullscreen></iframe>
+ </div>
 </div>
 
 <div class="vid-info">
