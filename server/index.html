@@ -1,0 +1,68 @@
+<style>
+@font-face {font-family: 'Roboto'; src: url('Roboto-Light.ttf') format('truetype'); }
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+
+.first { margin: auto; float: none; width: 500px; min-height: 50px; margin-top: 200px; background-color: rgba(0,0,0,0.6); padding-top: 35px; padding-bottom: 35px; font-family: Roboto; text-align: center; }
+.vid-info { width: 110%; height: 100%; background: rgba(0,0,0,0.4); color: #fff; padding: 1rem; font-family: Roboto; margin: auto; float: none; margin-left: -50px; text-align: center; }
+
+
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+html { overflow:  hidden; }
+</style>
+
+<script>
+document.onmousewheel=document.onwheel=function(){ 
+	return false;
+};
+document.addEventListener("MozMousePixelScroll",function(){return false},false);
+document.onkeydown=function(e) {
+	if (e.keyCode>=33&&e.keyCode<=40) return false;
+}
+</script>
+
+<div class="video-background">
+    <div class="video-foreground">
+      <iframe src="https://www.youtube.com/embed/dM0d9uUgVSc?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=dM0d9uUgVSc" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+<div class="vid-info">
+<div class="first">
+<p style="font-size: 40px; font-weight: 600; margin-top: 0px;">Добро пожаловать!</p>
+<br />
+<p style="font-size: 26px; font-weight: 600;">Это тестовый сервер</p>
+<br />
+<p style="font-size: 28px">Создатели:</p>
+<p style="font-size: 20px">Taxin2012</p>
+<p style="font-size: 20px; margin-bottom: 0px;">Alesha Vologodskiy</p>
+</div>
+</div>
